@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="list-group">
+        <ul class="list-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Task Title: <input id="txtBoxTitle" type="text" required></input>
+                    </h5>
+                    <h6 class="card-subtitle mb-2">Card Task Priority: <input id="txtBoxPriority" type="text" required></input>
+                    </h6>
+                    <h6 class="card-subtitle mb-2">Current Date: <input id="txtBoxDate" type="text" required></h6>
+                    <label for="detailedInfo">Optional detailed information</label>
+                    <textarea class="form-control" rows="3" id="detailedInfo"></textarea>
+                </div>
+                <input id="submitBtn" class="btn btn-primary" type="submit" value="Add Task" />
+            </div>
+    </div>
+    </ul>
+    <span class="active font-weight-bolder list-group-item text-center"
+        style="background-image: url('https://images.unsplash.com/photo-1516571137133-1be29e37143a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ'); font-size: 33px;">ALL
+        CURRENT TODO TASKS</span>
+
+    <div id="current-tasks">
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
