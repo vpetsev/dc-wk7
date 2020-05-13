@@ -1,0 +1,29 @@
+
+<html>
+<head>
+   
+</head>
+
+<body>
+
+    <h1>Filtered Movies</h1>
+
+       
+        <a href="/movies/add-movie">Add More Movies </a>
+
+    {{#listOfMovies}}
+    <div>
+        <ul>
+            <form method="POST" action="/movies/genre/{{genre}}">
+                <li>{{title}}</li>
+                <li>{{description}}</li>
+                <li>{{genre}}</li>
+                <img src="{{imageurl}}"/>
+                </form>
+        </ul>
+    </div>
+    {{/listOfMovies}}
+   
+</body>
+
+</html>

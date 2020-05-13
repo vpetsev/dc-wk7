@@ -1,0 +1,34 @@
+
+<html>
+<head>
+   
+</head>
+
+<body>
+
+    <h1>All Movies</h1>
+
+       
+        <a href="/movies/add-movie">Add More Movies </a>
+
+    {{#listOfMovies}}
+    <div>
+        <ul>
+            <form method="POST" action="/movies/delete-movie">
+                <li>{{title}}</li>
+                <li>{{description}}</li>
+                <li>{{genre}}</li>
+                <img src="{{imageurl}}"/>
+                <input type="hidden" value={{title}} name="title"/>
+                <input type="hidden" value={{description}} name="description"/>
+                <input type="hidden" value={{genre}} name="genre"/>
+                <input type="hidden" value={{imageurl}} name ="posterURL"/>
+                <button>Delete</button>
+            </form>
+        </ul>
+    </div>
+    {{/listOfMovies}}
+   
+</body>
+
+</html>

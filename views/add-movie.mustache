@@ -1,0 +1,26 @@
+
+<html>
+<head>
+   
+</head>
+
+<body>
+
+    <h1>Add Movie</h1>
+     <a href="/movies">View All Movies </a>
+
+    <form method="POST" action="/movies/add-movie">
+        <input type="text" placeholder="Movie Title" name="title"/>
+        <input type="text" placeholder="Description" name="description"/>
+        <input type="text" placeholder="Genre" name="genre"/>
+        <input type="text" placeholder="Image URL" name ="posterURL"/>
+        <button>Add Movie</button>
+    </form>
+    
+    {{#title}} 
+        Your movie "{{title}}"" has been added
+    {{/title}}
+    <br />
+</body>
+
+</html>
