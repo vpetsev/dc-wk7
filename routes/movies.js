@@ -33,26 +33,14 @@ router.post("/delete-movie", (req, res) => {
     res.redirect("/movies")
 })
 
-router.get("/movies/:movieId", (req, res)=> {
-    let movieID = req.params.title
-    let movies = movies.filter(movie => movie.title == movieID)
-    console.log(movies)
-    console.log("fired")
-    res.render("movies", { listOfMovies: movies })
+router.get("/movies/:movieId", (req, res) => {
+    const selectedMovies = movies.filter(movie => movie.title === req.params.movieId)
+    res.render("movies", { listOfMovies: selectedMovies })
 })
 
-router.get("/genre/:genre", (req, res)=>{
-    let genre = req.params.genre
-    let movies = movies.filter(movie => movie.genre == genre)
-    console.log(movies)
-    console.log("fired")
-    res.render("movies", { listOfMovies: movies })
-})
-
-router.get("/genre/:genre", (req, res)=>{
-    let genre = req.params.genre
-    movies = movies.filter(movie => movie.genre === genre)
-    res.render("/genre", {listOfMovies: movies})
+router.get("/genre/:genre", (req, res) => {
+    const filteredMovies = movies.filter(movie => movie.genre === req.params.genre)
+    res.render("movies", { listOfMovies: filteredMovies })
 })
 
 // /movies
