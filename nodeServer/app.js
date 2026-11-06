@@ -28,20 +28,19 @@ app.post('/todos', (req, res)=>{
     let taskDetails = req.body.details
     let taskDate = req.body.date
 
-    allTodos.push({title: taskTitle, taskPriority: taskPriority, details: taskDetails, dateAdded: taskDate})
+    allTodos.push({title: taskTitle, priority: taskPriority, details: taskDetails, dateAdded: taskDate})
 
-    res.send(JSON.stringify(allTodos))
+    res.json(allTodos)
 })
 
 
 app.get('/todos', (req, res) =>{
-    let testTodos = []
-    testTodos.push({title: "test title", priority: "high", details: "Lorem Ipsum Sum", dateAdded: "05/11/2020"})
-    res.send(JSON.stringify(testTodos))
+    res.json(allTodos)
 })
 
 console.log(allTodos)
 
-app.listen(3000, ()=>{
-    console.log("server is running on 'http://localhost:3000'")
-})
+if (require.main === module) {
+    app.listen(process.env.PORT || 3000, () => console.log("TODO server started"))
+}
+module.exports = app

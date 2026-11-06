@@ -20,6 +20,7 @@ app.use(express.urlencoded()) // for parsing form submitted data
 
 app.use("/movies", moviesRouter)
 
-app.listen(3001, () => {
-    console.log("server has started on http://localhost:3001")
-})
+if (require.main === module) {
+    app.listen(process.env.PORT || 3001, () => console.log("Movie server started"))
+}
+module.exports = app
